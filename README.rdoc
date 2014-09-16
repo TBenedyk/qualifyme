@@ -1,0 +1,9 @@
+== README
+
+QualifyMe parses data from the Gojimo API. It saves the data locally and displays it in responsive tables.
+
+To run the update task app:
+
+<tt>Qualification.update_qualifications</tt>.
+
+Specs are also included.

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  key: MyString
+  name: MyString
+  country: MyText
+  subjects: MyText
+  link: MyString
+  default_products: MyText
+
+two:
+  key: MyString
+  name: MyString
+  country: MyText
+  subjects: MyText
+  link: MyString
+  default_products: MyText

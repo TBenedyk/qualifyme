@@ -1,0 +1,52 @@
+#main-container.container
+  .row
+    .col-md-12
+      %h2 Qualification:
+      %h4
+        Name:
+        = @qualification.name
+      %h4
+        Country:
+        = @qualification.country["name"]
+  
+      %h4
+        Subjects:
+        = @qualification.subjects_data.count
+      
+      - if @qualification.subjects_data.present?
+        #subjects-table.table-responsive
+          %table.table.sortable
+            %thead
+              %tr
+                %th.col-md-1
+                %th.col-md-11 Title
+            %tbody
+              - @qualification.subjects_data.each_with_index do |subject, index|
+                %tr{:style => "background-color:#{subject['colour']}"}
+                  %td= "#{index + 1}."
+                  %td= subject["title"]
+
+      %h3
+        Products:
+        = @qualification.default_products.count
+      
+      - if @qualification.default_products.present?
+        #subjects-table.table-responsive
+          %table.table.sortable
+            %thead
+              %tr
+                %th.col-md-2
+                %th.col-md-2 Title
+                %th.col-md-2 Type
+                %th.col-md-2 Assets Count
+                %th.col-md-2 Publisher
+                %th.col-md-2 Author
+            %tbody
+              - @qualification.default_products.each_with_index do |subject, index|
+                %tr{:style => "background-color:#{subject['colour']}"}
+                  %td= "#{index + 1}."
+                  %td= subject["title"]
+                  %td= subject["type"]
+                  %td= subject["assets"].count
+                  %td= subject["publisher"]["title"]
+                  %td= subject["author"]

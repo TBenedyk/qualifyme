@@ -1,0 +1,17 @@
+#qualifications-table.table-responsive
+  %table.table.table-hover.sortable
+    %thead
+      %tr
+        %th.col-md-2
+        %th.col-md-3 Name
+        %th.col-md-3 Country
+        %th.col-md-2{"data-defaultsort" => "disabled"} Subjects Count
+        %th.col-md-2{"data-defaultsort" => "disabled"} Products Count
+    %tbody
+      - @qualifications.each_with_index do |qualification, index|
+        %tr
+          %td= "#{index + 1}."
+          %td= link_to qualification.name, qualification_path(qualification)
+          %td= qualification.country["name"] if qualification.country
+          %td= qualification.subjects_data.count
+          %td= qualification.default_products.count
